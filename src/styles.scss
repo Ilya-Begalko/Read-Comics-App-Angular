@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+$bg-color: #121212;
+$bg-color-main: #171717;
+$bd-btn-color: #C4B5FD;
+
+
+@font-face {
+    font-family: Nunito;
+    /* Гарнитура шрифта */
+    src: url(assets/fonts/Nunito-VariableFont_wght.ttf);
+    /* Путь к файлу со шрифтом */
+}
+
+* {
+    color: #fff;
+    font-family: Nunito;
+}
+
+body {
+    margin: 0;
+}

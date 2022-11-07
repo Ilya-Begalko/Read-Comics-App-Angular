@@ -1,0 +1,98 @@
+@import '../../../styles.scss';
+
+.comics {
+    height: 100%;
+    width: 20%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    margin: 10px 0;
+
+    .comics__img {
+        margin-bottom: 2%;
+    }
+
+    .comics__btn {
+        display: flex;
+        flex-direction: column;
+
+        .p-button {
+            width: 270px;
+            margin-bottom: 5%;
+            display: flex;
+            justify-content: center;
+
+            ::ng-deep .p-button-label {
+                flex: none;
+            }
+        }
+    }
+
+    .comics__info {
+        width: 270px;
+
+        background-color: #212121;
+        border-radius: 5px;
+
+        .label {
+            padding: 5px 10px;
+
+            .title {
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 20px;
+                color: #83848f;
+            }
+
+            .text {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 22px;
+            }
+        }
+    }
+}
+
+.content {
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .small-title {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
+        color: #83848f;
+    }
+
+    .tab {
+
+
+        .about {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 26px;
+            color: #83848f;
+        }
+
+        ::ng-deep .p-tabview .p-tabview-nav,
+        ::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+            border: 1px solid #fff;
+            border-width: 0 0 2px 0;
+        }
+
+        ::ng-deep p-tabview .p-element,
+        ::ng-deep .p-tabview .p-tabview-panels {
+            background-color: $bg-color-main;
+        }
+        ::ng-deep .p-tabview .p-tabview-nav li:not(.p-highlight) :hover{
+            background-color: rgba($color: #7f7f7f, $alpha: 0.5);
+        }
+    }
+}
