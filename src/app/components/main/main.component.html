@@ -16,7 +16,7 @@
                 Год:
             </div>
             <div class="text">
-                2022
+                {{comics[0]?.year}}
             </div>
         </div>
 
@@ -25,7 +25,7 @@
                 Издатель:
             </div>
             <div class="text">
-                Marvel Comics
+                {{comics[0]?.publishing}}
             </div>
         </div>
 
@@ -34,7 +34,7 @@
                 Тип выпуска:
             </div>
             <div class="text">
-                Онгоинг
+                {{comics[0]?.type}}
             </div>
         </div>
 
@@ -43,7 +43,7 @@
                 Статус:
             </div>
             <div class="text">
-                Продолжается
+                {{comics[0]?.status}}
             </div>
         </div>
     </div>
@@ -51,22 +51,40 @@
 
 <div class="content">
     <div class="big-title">
-        <h1>Удивительный Человек-паук (Том 6)</h1>
+        <h1>{{comics[0]?.title}}</h1>
     </div>
     <div class="small-title">
-        Amazing Spider-Man (Vol 6)
+        {{comics[0]?.engTitle}}
     </div>
     <div class="tab">
         <p-tabView>
             <p-tabPanel  header="Описание">
-                <div class="about">ЧТО НАТВОРИЛ ЧЕЛОВЕК-ПАУК?! Питер не в ладах с ФФ. Он в стороне от Мстителей. Он в контрах с тетей Мэй!
-                Никто не хочет видеть Человека-паука - кроме Доктора Осьминога. Ок сидит у Человека-паука на хвосте, а
-                Мастер-планировщик задумал нечто поистине ужасное, когда доберется своими щупальцами до Спайди. И что же
-                планирует Тумстоун? Как раз к 60-летию Человека-паука начинается новый том AMAZING SPIDER-MAN, и 2022
-                год станет самым большим годом для Человека-паука за всю историю! Не верите нам? Мы вернули Джона
-                Ромиту-младшего только ради этого!</div>
+                <div class="about">{{comics[0]?.about}}</div>
             </p-tabPanel>
-            <p-tabPanel header="Главы ()">
+            <p-tabPanel header="Главы ({{comics[0]?.sections.length}})">
+
+                <p-table [value]="comics[0]?.sections" responsiveLayout="scroll">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th [width]="100">ID</th>
+                            <th [width]="700">Номер</th>
+                            <th [width]="100">Страницы</th>
+                            <th [width]="300"></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-section>
+                        <tr>
+                            <td>{{section.id}}</td>
+                            <td>{{section.section}}</td>
+                            <td>{{section.pages}}</td>
+                            <td>
+                                <p-button icon="pi pi-eye" (onClick)="openComics(section.path)"></p-button>
+                                <span style="margin-left: 10px;"></span>
+                                <p-button icon="pi pi-download" (onClick)="downloadComics(section.path)"></p-button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
                 
             </p-tabPanel>
         </p-tabView>
