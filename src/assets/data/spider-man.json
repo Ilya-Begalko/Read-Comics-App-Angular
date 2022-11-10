@@ -12,31 +12,31 @@
             "id": 1,
             "section": "#1",
             "pages": "44 стр.",
-            "path": "../../assets/#1.pdf"
+            "path": "1"
         },
         {
             "id": 2,
             "section": "#2",
             "pages": "22 стр.",
-            "path": ""
+            "path": "2"
         },
         {
             "id": 3,
             "section": "#3",
             "pages": "23 стр.",
-            "path": ""
+            "path": "3"
         },
         {
             "id": 4,
             "section": "#4",
             "pages": "21 стр.",
-            "path": ""
+            "path": "4"
         },
         {
             "id": 5,
             "section": "#5",
             "pages": "22 стр.",
-            "path": ""
+            "path": "5"
         }
     ]
 

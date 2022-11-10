@@ -56,6 +56,20 @@
     }
 }
 
+::ng-deep .p-datatable .p-datatable-thead>tr>th {
+    border-bottom: 1px solid #fff;
+    background-color: #212121;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody>tr {
+    background-color: #212121;
+
+}
+
+::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+    border-bottom: 1px solid #fff;
+}
+
 .content {
     width: 50%;
 
@@ -91,8 +105,18 @@
         ::ng-deep .p-tabview .p-tabview-panels {
             background-color: $bg-color-main;
         }
-        ::ng-deep .p-tabview .p-tabview-nav li:not(.p-highlight) :hover{
+
+        ::ng-deep .p-tabview .p-tabview-nav li:not(.p-highlight) :hover {
             background-color: rgba($color: #7f7f7f, $alpha: 0.5);
         }
     }
+}
+
+::ng-deep .p-dialog {
+    border-color: #212121;
+}
+
+::ng-deep .p-dialog .p-dialog-header,
+::ng-deep .p-dialog .p-dialog-content {
+    background-color: #212121;
 }

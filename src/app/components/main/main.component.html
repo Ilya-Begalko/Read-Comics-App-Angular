@@ -58,7 +58,7 @@
     </div>
     <div class="tab">
         <p-tabView>
-            <p-tabPanel  header="Описание">
+            <p-tabPanel header="Описание">
                 <div class="about">{{comics[0]?.about}}</div>
             </p-tabPanel>
             <p-tabPanel header="Главы ({{comics[0]?.sections.length}})">
@@ -69,7 +69,7 @@
                             <th [width]="100">ID</th>
                             <th [width]="700">Номер</th>
                             <th [width]="100">Страницы</th>
-                            <th [width]="300"></th>
+                            <th [width]="100"></th>
                         </tr>
                     </ng-template>
                     <ng-template pTemplate="body" let-section>
@@ -78,17 +78,34 @@
                             <td>{{section.section}}</td>
                             <td>{{section.pages}}</td>
                             <td>
-                                <p-button icon="pi pi-eye" (onClick)="openComics(section.path)"></p-button>
-                                <span style="margin-left: 10px;"></span>
-                                <p-button icon="pi pi-download" (onClick)="downloadComics(section.path)"></p-button>
+                                <p-button icon="pi pi-eye" (onClick)="openComics(section)"></p-button>
                             </td>
                         </tr>
                     </ng-template>
                 </p-table>
-                
+
             </p-tabPanel>
         </p-tabView>
     </div>
-
-
 </div>
+
+
+<p-dialog header={{numberOfComics}} [(visible)]="displayBasic" [style]="{height: '100vh',width: '50vw'}">
+    <div [ngSwitch]="urlOfComics" style="height:100%">
+        <ng-template ngSwitchCase="1" style="height:100%">
+            <ng2-pdfjs-viewer pdfSrc="/assets/First.pdf"></ng2-pdfjs-viewer>
+        </ng-template>
+        <ng-template ngSwitchCase="2" style="height:100%">
+            <ng2-pdfjs-viewer pdfSrc="/assets/Second.pdf"></ng2-pdfjs-viewer>
+        </ng-template>
+        <ng-template ngSwitchCase="3" style="height:100%">
+            <ng2-pdfjs-viewer pdfSrc="/assets/Thirth.pdf"></ng2-pdfjs-viewer>
+        </ng-template>
+        <ng-template ngSwitchCase="4" style="height:100%">
+            <ng2-pdfjs-viewer pdfSrc="/assets/Fouth.pdf"></ng2-pdfjs-viewer>
+        </ng-template>
+        <ng-template ngSwitchCase="5" style="height:100%">
+            <ng2-pdfjs-viewer pdfSrc="/assets/Fisth.pdf"></ng2-pdfjs-viewer>
+        </ng-template>
+    </div>
+</p-dialog>

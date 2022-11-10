@@ -1,6 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
+import {
+  LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
+   ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService
+ } from '@syncfusion/ej2-angular-pdfviewer';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -8,10 +13,16 @@ import { Component } from '@angular/core';
 })
 export class MainComponent {
   comics: any[] = [];
+  numberOfComics: string = '';
+  urlOfComics: any;
+
+  displayBasic: boolean = false;
 
   constructor(private http: HttpClient) {
     this.initComics();
   }
+
+
 
   initComics() {
     this.http
@@ -22,9 +33,12 @@ export class MainComponent {
       });
   }
 
-  openComics(url: string) {
-    console.log(url);
-    window.open(url, '_blank');
+  openComics(comics: any) {
+    this.displayBasic = true;
+
+    this.numberOfComics = comics.section;
+    this.urlOfComics = comics.path;
+    console.log(this.urlOfComics);
   }
   downloadComics(url: string) {
     console.log(url);
